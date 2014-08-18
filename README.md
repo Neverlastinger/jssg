@@ -13,3 +13,8 @@ You can find the presentation inside the 01_HistoryOfJavaScript folder.
 - null and undefined
 - if, else
 - ==, ===
+
+- var
+- Math.max, Math.round
+- if, else
+- for
