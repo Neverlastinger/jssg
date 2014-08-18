@@ -20,5 +20,9 @@ You can find the presentation inside the 01_HistoryOfJavaScript folder.
 ###03 - Introduction to Programming with Hristo
 
 ###04 - What's happening in index.html? Also, [Functions](http://eloquentjavascript.net/03_functions.html)
+* HTML structure, head, body
+* Basic elements - div, p
+* inline scripts, inline styles
+* links to scripts and styles, scripts at the bottom
 
-###05 - Basic DOM. The Cosmic Encounter score board project. 
+###05 - [Higher-Order Functions](http://eloquentjavascript.net/05_higher_order.html). The Cosmic Encounter score board project. 
