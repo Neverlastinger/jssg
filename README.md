@@ -11,9 +11,7 @@ You can find the presentation inside the 01_HistoryOfJavaScript folder.
 * console.log
 * Boolean, >, &&, ||, !
 * null and undefined
-* if, else
 * ==, ===
-
 * var
 * Math.max, Math.round
 * if, else
