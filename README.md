@@ -16,3 +16,7 @@ You can find the presentation inside the 01_HistoryOfJavaScript folder.
 * Math.max, Math.round
 * if, else
 * for
+
+##03 - Introduction to Programming with Hristo
+
+##04 - What's happening in index.html? The Cosmic Encounter score board. 
