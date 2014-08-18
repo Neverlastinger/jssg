@@ -19,7 +19,7 @@ You can find the presentation inside the 01_HistoryOfJavaScript folder.
 
 ###03 - Introduction to Programming with Hristo
 
-###04 - What's happening in index.html? Also, [Functions](http://eloquentjavascript.net/03_functions.html)
+###04 - What's happening in index.html? [Functions](http://eloquentjavascript.net/03_functions.html), [Data Structures: Objects and Arrays](http://eloquentjavascript.net/04_data.html)
 * HTML structure, head, body
 * Basic elements - div, p
 * inline scripts, inline styles
