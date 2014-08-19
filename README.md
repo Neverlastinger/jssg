@@ -24,6 +24,7 @@ You can find the presentation inside the 01_HistoryOfJavaScript folder.
 * Basic elements - div, p
 * inline scripts, inline styles
 * links to scripts and styles, scripts at the bottom
+
 ----
 * defining functions, conditional function assignments
 * local and global variables
@@ -33,5 +34,6 @@ You can find the presentation inside the 01_HistoryOfJavaScript folder.
  * default values
  * the arguments array-like param
 * nested functions, nested scope
+* closures
 
 ###05 - [Higher-Order Functions](http://eloquentjavascript.net/05_higher_order.html). The Cosmic Encounter score board project. 
