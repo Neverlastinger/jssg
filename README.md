@@ -18,14 +18,20 @@ You can find the presentation inside the 01_HistoryOfJavaScript folder.
 * for
 
 ###03 - Introduction to Programming with Hristo
+* by value, by reference
+* calling methods/functions, params
+* simple data structures
+* OOP - classes and objects, abstraction, encapsulation, code reuse
 
 ###04 - What's happening in index.html? [Functions](http://eloquentjavascript.net/03_functions.html), [Data Structures: Objects and Arrays](http://eloquentjavascript.net/04_data.html)
+
+#####index.html
 * HTML structure, head, body
 * Basic elements - div, p
 * inline scripts, inline styles
 * links to scripts and styles, scripts at the bottom
 
-----
+#####functions
 * defining functions, conditional function assignments
 * local and global variables
 * invoking with arbitrary arguments
@@ -35,5 +41,14 @@ You can find the presentation inside the 01_HistoryOfJavaScript folder.
  * the arguments array-like param
 * nested functions, nested scope
 * closures
+
+#####data structures
+* arrays
+* objects, properties, access by name
+* for-in, forEach
+* overriding properties
+* objects as namespaces - Math
+* the global object
+* json - [Flickr Uploads from everyone](https://api.flickr.com/services/feeds/photos_public.gne?format=json)
 
 ###05 - [Higher-Order Functions](http://eloquentjavascript.net/05_higher_order.html). The Cosmic Encounter score board project. 
