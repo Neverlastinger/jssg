@@ -19,7 +19,7 @@ You can find the presentation inside the 01_HistoryOfJavaScript folder.
 * if, else
 * for
 
-###03, *16th Aug* - Introduction to Programming with Hristo
+###03, *26th Aug* - Introduction to Programming with Hristo
 * by value, by reference
 * calling methods/functions, params
 * simple data structures
