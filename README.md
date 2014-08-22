@@ -2,8 +2,7 @@
 
 This is the public space to find all resources and projects we work on during the JavaScript Study Group in Milestone Systems. The official book is [Eloquent JavaScript](http://eloquentjavascript.net/index.html). 
 
-###01, *12th Aug* - History of JavaScript
-
+###*01, 12th Aug* - History of JavaScript
 
 You can find the presentation inside the 01_HistoryOfJavaScript folder.
 
