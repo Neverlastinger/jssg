@@ -2,11 +2,11 @@
 
 This is the public space to find all resources and projects we work on during the JavaScript Study Group in Milestone Systems. The official book is [Eloquent JavaScript](http://eloquentjavascript.net/index.html). 
 
-###*01, 12th Aug* - History of JavaScript
+###01 - History of JavaScript <span style="font-size: 11px; font-style: italic">12th Aug</span>
 
 You can find the presentation inside the 01_HistoryOfJavaScript folder.
 
-###*02, 19th Aug* - [Values, Types, and Operators](http://eloquentjavascript.net/01_values.html), [Program Structure](http://eloquentjavascript.net/02_program_structure.html)
+###02 - [Values, Types, and Operators](http://eloquentjavascript.net/01_values.html), [Program Structure](http://eloquentjavascript.net/02_program_structure.html) <span style="font-size: 11px; font-style: italic">19th Aug</span>
 * Numbers and arithmetic, %, Infinity, NaN
 * Strings, +
 * console.log
@@ -18,13 +18,13 @@ You can find the presentation inside the 01_HistoryOfJavaScript folder.
 * if, else
 * for
 
-###*03, 26th Aug* - Introduction to Programming with Hristo
+###03 - Introduction to Programming with Hristo <span style="font-size: 11px; font-style: italic">26th Aug</span>
 * by value, by reference
 * calling methods/functions, params
 * simple data structures
 * OOP - classes and objects, abstraction, encapsulation, code reuse
 
-###*04, 2nd Sept* - What's happening in index.html? [Functions](http://eloquentjavascript.net/03_functions.html), [Data Structures: Objects and Arrays](http://eloquentjavascript.net/04_data.html)
+###04 - What's happening in index.html? [Functions](http://eloquentjavascript.net/03_functions.html), [Data Structures: Objects and Arrays](http://eloquentjavascript.net/04_data.html) <span style="font-size: 11px; font-style: italic">2nd Sept</span>
 
 #####index.html
 * HTML structure, head, body
@@ -52,4 +52,4 @@ You can find the presentation inside the 01_HistoryOfJavaScript folder.
 * the global object
 * json - [Flickr Uploads from everyone](https://api.flickr.com/services/feeds/photos_public.gne?format=json)
 
-###*05, 9th Sept* - [Higher-Order Functions](http://eloquentjavascript.net/05_higher_order.html). The Cosmic Encounter score board project. 
+###05 - [Higher-Order Functions](http://eloquentjavascript.net/05_higher_order.html). The Cosmic Encounter score board project <span style="font-size: 11px; font-style: italic">9th Sept</span>
