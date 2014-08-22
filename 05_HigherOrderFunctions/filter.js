@@ -4,9 +4,9 @@ var filter = function(array, f) {
 	var result = [];
 	
 	array.forEach(function(element) {
-	if (f(element)) {
-		result.push(element);
-	}
+		if (f(element)) {
+			result.push(element);
+		}
 	});
 	
 	return result;
