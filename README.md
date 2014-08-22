@@ -41,7 +41,7 @@ You can find the presentation inside the 01_HistoryOfJavaScript folder.
  * undefined params
  * default values
  * the arguments array-like param
-* nested functions, nested scope
+* nested functions, nested scope, functions as a returned value
 * closures
 
 #####data structures
