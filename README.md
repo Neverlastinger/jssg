@@ -44,9 +44,9 @@ You can find the presentation inside the 01_HistoryOfJavaScript folder.
 * closures
 
 #####data structures
-* arrays
+* arrays - create, add element on an arbitrary position, push, pop, slice, splice, for
 * objects, properties, access by name
-* for-in, for
+* for-in
 * overriding properties
 * objects as namespaces - Math
 * the global object
