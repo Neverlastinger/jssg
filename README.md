@@ -46,7 +46,7 @@ You can find the presentation inside the 01_HistoryOfJavaScript folder.
 #####data structures
 * arrays
 * objects, properties, access by name
-* for-in, forEach
+* for-in, for
 * overriding properties
 * objects as namespaces - Math
 * the global object
