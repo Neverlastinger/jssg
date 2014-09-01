@@ -1,0 +1,12 @@
+body {
+	background-color: #cacaca;
+}
+
+.target {
+	margin: 0 auto;
+	width: 400px;
+	font-style: Verdana;
+	font-size: 36px;
+	text-align: center;
+	border: 1px solid black;
+}
