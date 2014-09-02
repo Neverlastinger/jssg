@@ -59,4 +59,4 @@ You can find the presentation inside the 01_HistoryOfJavaScript folder.
 * filter
 * reduce
 
-###*05, 16th Sept* - The Cosmic Encounter score board project. 
+###*06, 16th Sept* - The Cosmic Encounter score board project. 
