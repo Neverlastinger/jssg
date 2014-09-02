@@ -43,6 +43,8 @@ You can find the presentation inside the 01_HistoryOfJavaScript folder.
 
 ###*05, 9th Sept* - [Functions](http://eloquentjavascript.net/03_functions.html), [Higher-Order Functions](http://eloquentjavascript.net/05_higher_order.html).
 
+TODO: show the json from the previous lecture!
+
 #####functions
 * defining functions, conditional function assignments
 * local and global variables
