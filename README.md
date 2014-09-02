@@ -24,13 +24,24 @@ You can find the presentation inside the 01_HistoryOfJavaScript folder.
 * simple data structures
 * OOP - classes and objects, abstraction, encapsulation, code reuse
 
-###*04, 2nd Sept* - What's happening in index.html? [Functions](http://eloquentjavascript.net/03_functions.html), [Data Structures: Objects and Arrays](http://eloquentjavascript.net/04_data.html)
+###*04, 2nd Sept* - What's happening in index.html? [Data Structures: Objects and Arrays](http://eloquentjavascript.net/04_data.html)
 
 #####index.html
 * HTML structure, head, body
 * Basic elements - div, p
 * inline scripts, inline styles
 * links to scripts and styles, scripts at the bottom
+
+#####data structures
+* arrays - create, add element on an arbitrary position, push, pop, slice, splice, for
+* objects, properties, access by name
+* for-in
+* overriding properties
+* objects as namespaces - Math
+* the global object
+* json - [Flickr Uploads from everyone](https://api.flickr.com/services/feeds/photos_public.gne?format=json)
+
+###*05, 9th Sept* - [Functions](http://eloquentjavascript.net/03_functions.html), [Higher-Order Functions](http://eloquentjavascript.net/05_higher_order.html).
 
 #####functions
 * defining functions, conditional function assignments
@@ -43,13 +54,9 @@ You can find the presentation inside the 01_HistoryOfJavaScript folder.
 * nested functions, nested scope, functions as a returned value
 * closures
 
-#####data structures
-* arrays - create, add element on an arbitrary position, push, pop, slice, splice, for
-* objects, properties, access by name
-* for-in
-* overriding properties
-* objects as namespaces - Math
-* the global object
-* json - [Flickr Uploads from everyone](https://api.flickr.com/services/feeds/photos_public.gne?format=json)
+#####higher-order functions
+* forEach
+* filter
+* reduce
 
-###*05, 9th Sept* - [Higher-Order Functions](http://eloquentjavascript.net/05_higher_order.html). The Cosmic Encounter score board project. 
+###*05, 16th Sept* - The Cosmic Encounter score board project. 
