@@ -37,3 +37,5 @@ games.forEach(function(game) {
 	});
 
 });
+
+console.log(score);
