@@ -27,5 +27,5 @@ if (obj.prop) {
 // checking for an existance of a property by name
 var propName = 'prop';
 if (obj[propName]) { 
-	console.log(obj.prop);
+	console.log(obj[propName]);
 }
