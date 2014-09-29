@@ -64,3 +64,6 @@ TODO: show the json from the previous lecture!
 ###*06, 16th Sept* - Workshop - The Cosmic Encounter score board project. 
 
 ###*07, 1st Oct* - Basic DOM. 
+* Basic DOM - the presentation
+* Flickr demo
+* youtube adblocker
