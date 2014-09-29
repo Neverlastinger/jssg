@@ -38,11 +38,12 @@ games.forEach(function(game) {
 
 });
 
-console.log(score);
-
 var players = Object.keys(score);
 
 players = players.sort(function(a, b) {
 	return score[b].ratio - score[a].ratio;
 });
 
+players.forEach(function(player) {
+	displayPlayer(player, score[player].ratio.toFixed(3));
+});
