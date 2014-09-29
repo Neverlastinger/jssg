@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8" />
+	<title>Latest photos from Flikr</title>
+	
+	<style>
+		img {
+			margin-bottom: 20px;
+		}
+	</style>
+	
+	<script>
+		
+		var jsonFlickrFeed = function(data) {
+			
+			var container = document.querySelector('#images');
+			
+			data.items.forEach(function(item) {
+				
+				var titleElement = document.createElement('div');
+				titleElement.innerHTML = item.title;
+				
+				var imgElement = document.createElement('img');
+				imgElement.src = item.media.m;
+				
+				container.appendChild(titleElement);
+				container.appendChild(imgElement);
+			});
+		}
+	</script>
+
+</head>
+
+<body>
+
+	<div id="images"></div>
+
+	<script src="https://api.flickr.com/services/feeds/photos_public.gne?format=json"></script>
+</body>
+</html>
