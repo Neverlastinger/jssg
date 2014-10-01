@@ -4,7 +4,7 @@ This is the public space to find all resources and projects we work on during th
 
 ###*01, 12th Aug* - History of JavaScript
 
-You can find the presentation inside the 01_HistoryOfJavaScript folder.
+[http://neverlastinger.github.io/jssg/01_HistoryOfJavaScript/slides.html#/](http://neverlastinger.github.io/jssg/01_HistoryOfJavaScript/slides.html#/)
 
 ###*02, 19th Aug* - [Values, Types, and Operators](http://eloquentjavascript.net/01_values.html), [Program Structure](http://eloquentjavascript.net/02_program_structure.html)
 * Numbers and arithmetic, %, Infinity, NaN
@@ -64,7 +64,7 @@ TODO: show the json from the previous lecture!
 ###*06, 16th Sept* - Workshop - The Cosmic Encounter score board project. 
 
 ###*07, 1st Oct* - Basic DOM
-* Basic DOM - the presentation
+* [Basic DOM - presentation](http://neverlastinger.github.io/jssg/07_BasicDOM/slides.html#/)
 * Youtube Adblocker
 * Flickr Demo
 * Cosmic Encounter Score Board project - Stage 2
