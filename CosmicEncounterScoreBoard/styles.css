@@ -1,0 +1,50 @@
+html, body, ul, li {
+	margin: 0px;
+	padding: 0px;
+}
+
+html, body {
+	background-color: hsl(207, 100%, 7%);
+}
+
+ul {
+	width: 800px;
+	margin: 60px auto 0 auto;
+	list-style-type: none;
+}
+	ul li {
+		margin-bottom: 30px;
+		height: 70px;
+		line-height: 70px;
+		border-radius: 20px;
+		color: black;
+		font-family: Georgia;
+		font-size: 36px;
+		font-weight: bold;
+		font-style: italic;
+	}
+		ul li div {
+			display: inline-block;
+		}
+		ul li div:first-child {
+			padding-left: 40px;
+			width: 540px;
+			border-radius: 8px 45px 45px 8px;
+			background-color: hsl(12, 80%, 48%);
+			color: white;
+		}
+		ul li div:last-child {
+			width: 216px;
+			border-radius: 0 8px 8px 0;
+			background-color: hsl(206, 68%, 80%);
+		}
+		ul li div:last-child:before {
+			display: inline-block;
+			margin-right: 30px;
+			background-color: hsl(207, 100%, 7%);
+			width: 45px;
+			height: 70px;
+			border-radius: 0 45px 45px 0;
+			content: '.';
+			color: hsl(207, 100%, 7%);
+		}
