@@ -68,3 +68,9 @@ TODO: show the json from the previous lecture!
 * Youtube Adblocker
 * Flickr Demo
 * Cosmic Encounter Score Board project - Stage 2
+
+###*08, 07th Sept* - [The Secret Life of Objects](http://eloquentjavascript.net/06_object.html)
+
+###*09, 14th Sept* - Basic layouts and CSS
+
+###*10, 21th Sept* - Where are my classes?
