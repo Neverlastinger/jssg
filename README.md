@@ -1,6 +1,6 @@
 #Milestone JavaScript Study Group.
 
-This is the public space to find all resources and projects we work on during the JavaScript Study Group in Milestone Systems. The official book is [Eloquent JavaScript](http://eloquentjavascript.net/index.html). We've also created the [http://neverlastinger.github.io/jssg/CosmicEncounterScoreBoard/](Cosmic Encounter Score Board). 
+This is the public space to find all resources and projects we work on during the JavaScript Study Group in Milestone Systems. The official book is [Eloquent JavaScript](http://eloquentjavascript.net/index.html). We've also created the [Cosmic Encounter Score Board](http://neverlastinger.github.io/jssg/CosmicEncounterScoreBoard/). 
 
 ###*01, 12th Aug* - History of JavaScript
 
