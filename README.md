@@ -1,6 +1,6 @@
 #Milestone JavaScript Study Group.
 
-This is the public space to find all resources and projects we work on during the JavaScript Study Group in Milestone Systems. The official book is [Eloquent JavaScript](http://eloquentjavascript.net/index.html). 
+This is the public space to find all resources and projects we work on during the JavaScript Study Group in Milestone Systems. The official book is [Eloquent JavaScript](http://eloquentjavascript.net/index.html). We've also created the [http://neverlastinger.github.io/jssg/CosmicEncounterScoreBoard/](Cosmic Encounter Score Board). 
 
 ###*01, 12th Aug* - History of JavaScript
 
@@ -70,6 +70,19 @@ TODO: show the json from the previous lecture!
 * Cosmic Encounter Score Board project - Stage 2
 
 ###*08, 09th Sept* - [The Secret Life of Objects](http://eloquentjavascript.net/06_object.html)
+* Objects as data structures - a recap
+* Adding methods to an object
+* Using the this inside an object literal - *duck.speek()*
+* Reassigning methods, losing the this - *speek = duck.speek*
+* Changing the this, call and apply - *speek.call(pig)*
+* Who called me? The HTML!
+* Prototypes - accessing properties from Object.prototype and the prototype chain
+* *Object.create*
+* Using functions directly from prototypes - *Array.prototype.forEach.call(elements, handler)*
+* Polyfilling forEach
+* Constructor functions
+* Inheriting from the prototype of the constructor function
+* Inheritance
 
 ###*09, 21st Sept* - Basic layouts and CSS
 
