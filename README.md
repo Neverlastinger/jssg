@@ -72,9 +72,9 @@ TODO: show the json from the previous lecture!
 ###*08, 09th Sept* - [The Secret Life of Objects](http://eloquentjavascript.net/06_object.html)
 * Objects as data structures - a recap
 * Adding methods to an object
-* Using the this inside an object literal - *duck.speek()*
-* Reassigning methods, losing the this - *speek = duck.speek*
-* Changing the this, call and apply - *speek.call(pig)*
+* Using the this inside an object literal - *duck.speak()*
+* Reassigning methods, losing the this - *speak = duck.speak*
+* Changing the this, call and apply - *speak.call(pig)*
 * Changing the this, bind - *cavie.bind(pig)*
 * Who called me? The HTML!
 * Prototypes - accessing properties from Object.prototype and the prototype chain

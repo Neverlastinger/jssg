@@ -1,52 +1,52 @@
 // let's define a white duck in our world
 var duck = { color: 'white' };
 
-// and allow it to speek
-duck.speek = function() {
+// and allow it to speak
+duck.speak = function() {
 	console.log("Quack quack!");
 }
 
-// speek, duck, speek!
-duck.speek();
+// speak, duck, speak!
+duck.speak();
 
 // ok, I don't like this duck, let's define a new one instead
 var duck = {};
 
 // a duck that can say its name - a smarter duck
-duck.speek = function() {
+duck.speak = function() {
 	console.log("Hi, my name is " + this.myName);
 }
 
 // c'mon duck, say your name
-duck.speek();
+duck.speak();
 
 // let's call the duck Daisy
 duck.myName = 'Daisy';
 
 // say your name, again, duck!
-duck.speek();
+duck.speak();
 
-// our world needs to speek by its own
-var speek = duck.speek;
+// our world needs to speak by its own
+var speak = duck.speak;
 
-// speek! who? doesn't matter, just speek!
-speek();
+// speak! who? doesn't matter, just speak!
+speak();
 
 // ok, I need a pig too
 var pig = { myName: 'Geraldine' };
 
-// pig, you don't have the ability to speek, but you shall speek this time only!
-speek.call(pig);
-speek.apply(pig);
+// pig, you don't have the ability to speak, but you shall speak this time only!
+speak.call(pig);
+speak.apply(pig);
 
-// pig, you shall speek!
-pig.speek = speek;
-pig.speek();
+// pig, you shall speak!
+pig.speak = speak;
+pig.speak();
 
 // a cavie that actually wants to be a pig
 cavie = {};
-cavie.speek = speek.bind(pig);
-cavie.speek();
+cavie.speak = speak.bind(pig);
+cavie.speak();
 
 // ************
 // ************
@@ -91,13 +91,13 @@ console.log(geraldine.name, geraldine.color);
 console.log(josephine.name, josephine.color);
 
 // All my pigs shall speak!
-Pig.prototype.speek = function() {
+Pig.prototype.speak = function() {
 	console.log("Hi, I am a pig called " + this.name);
 }
 
 // talk to me, pigs!
-geraldine.speek();
-josephine.speek();
+geraldine.speak();
+josephine.speak();
 
 // All my creations should run!
 Object.prototype.run = function() {
@@ -118,6 +118,6 @@ Cavie.prototype.fur = 'long';
 
 // Finally, creating the juji cavie :)
 var juji = new Cavie('orange', 'juji');
-juji.speek();
+juji.speak();
 juji.run();
 console.log(juji.fur);
