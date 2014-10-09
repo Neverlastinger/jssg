@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8" />
+	<title>Examples</title>
+	
+	<script src="script.js"></script>
+
+</head>
+
+<body>
+
+	<button id="target">click me to call you</button>
+	<button id="target">i am a dummy button no one wants to click</button>
+	
+	<script>
+		
+		var button = {
+			element: document.querySelector('#target'),
+			handler: function() {
+				console.log(this);
+			}
+		}
+		
+		button.element.onclick = button.handler;
+	</script>
+	
+	<script>
+		
+		var buttons = document.querySelectorAll('button');
+		
+//		buttons.forEach(function(button) {
+//			console.log(button);
+//		});
+		
+		// one way
+		Array.prototype.forEach.call(buttons, function(button) {
+			console.log(button);
+		});
+		
+		// or another...
+		NodeList.prototype.forEach = Array.prototype.forEach;
+		
+		buttons.forEach(function(button) {
+			console.log(button);
+		});
+	</script>
+
+</body>
+</html>
