@@ -75,6 +75,7 @@ TODO: show the json from the previous lecture!
 * Using the this inside an object literal - *duck.speek()*
 * Reassigning methods, losing the this - *speek = duck.speek*
 * Changing the this, call and apply - *speek.call(pig)*
+* Changing the this, bind - *cavie.bind(pig)*
 * Who called me? The HTML!
 * Prototypes - accessing properties from Object.prototype and the prototype chain
 * *Object.create*
