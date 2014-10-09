@@ -30,12 +30,14 @@ ul {
 			padding-left: 40px;
 			width: 540px;
 			border-radius: 8px 45px 45px 8px;
+			background-color: black;
 			background-color: hsl(12, 80%, 48%);
 			color: white;
 		}
 		ul li div:last-child {
 			width: 216px;
 			border-radius: 0 8px 8px 0;
+			background-color: black;
 			background-color: hsl(206, 68%, 80%);
 		}
 		ul li div:last-child:before {
