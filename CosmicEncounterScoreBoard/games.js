@@ -54,5 +54,13 @@ var games = [
 	{
 		losers: ['boby', 'teo', 'veso', 'doncho', 'angel'],
 		winners: ['rado']
+	},
+	{
+		losers: ['angel', 'doncho', 'teo', 'rado'],
+		winners: ['boby']
+	},
+	{
+		losers: ['angel', 'doncho', 'teo', 'boby'],
+		winners: ['rado']
 	}
 ];
