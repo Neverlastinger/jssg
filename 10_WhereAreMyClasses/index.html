@@ -1,0 +1,1197 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Where are my classes</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/custom.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body id="custom">
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Where are my classes</h1>
+					<h5>JavaScript for classical programmers</h5>
+				</section>
+				
+				<section>
+					<div style="position: absolute; width: 100%; min-height: 600px;">
+						
+						<div class="box classesBox">
+							<p>Classes</p>
+						</div>
+						
+						<div class="fragment">
+							<div class="arrow arrow1"></div>
+							<div class="box toolBox toolBox1">
+								<p>Group of methods</p>
+							</div>
+						</div>
+						
+						<div class="fragment">
+							<div class="arrow arrow2"></div>
+							<div class="box toolBox toolBox2">
+								<p>Private</p>
+							</div>
+						</div>
+						
+						<div class="fragment">
+							<div class="arrow arrow3"></div>
+							<div class="box toolBox toolBox3">
+								<p>Implementation of abstract methods/interfaces</p>
+							</div>
+						</div>
+
+					</div>
+				</section>
+				
+				<section>
+					<section>
+						<h1>Imitating classes</h1>
+						<div class="fragment">
+							<h3>Where are my...</h3>
+							<ul>
+								<li>classes</li>
+								<li>instances</li>
+								<li>public/private members</li>
+								<li>public/private methods</li>
+								<li>static methods</li>
+								<li>class inheritance</li>
+							</ul>
+						</div>
+					</section>
+					
+					<section>
+						<h2>Empty class</h2>
+						<pre><code class="javascript" data-trim>
+var Book = function() { 
+
+};
+</code></pre>
+					</section>
+					
+					<section>
+						<h2>Public instance members</h2>
+						<pre><code class="javascript" data-trim>
+var Book = function(isbn, title, author) { 
+
+	this.isbn = isbn; 
+	this.title = title || 'No title specified'; 
+	this.author = author || 'No author specified';
+};
+</code></pre>
+					</section>
+					
+					<section>
+						<h2>Public instance methods</h2>
+						<pre><code class="javascript" data-trim>
+var Book = function(isbn, title, author) { 
+
+};
+
+Book.prototype.display = function() { };
+</code></pre>
+					</section>
+					
+					<section>
+						<h2>Public static methods</h2>
+						<pre><code class="javascript" data-trim>
+var Book = function(isbn, title, author) { 
+
+};
+
+Book.convertToTitleCase = function(string) { };
+</code></pre>
+					</section>
+					
+					<section>
+						<h2>Instances</h2>
+						<pre><code class="javascript" data-trim style="font-size: 1em;">
+var Book = function(isbn, title, author) { 
+		this.isbn = isbn; 
+		this.title = title || 'No title specified'; 
+		this.author = author || 'No author specified';
+};
+
+Book.prototype.display = function() { };
+
+Book.convertToTitleCase = function(string) { };
+
+var jsPatterns = new Book('9781590599082', 
+	'Pro JavaScript Design Patterns', ['Dustin Diaz', 'Ross Harmes']);
+jsPatterns.display();
+</code></pre>
+					</section>
+					
+					<section>
+						<h2>Private members</h2>
+						<pre><code class="javascript" data-trim>
+var Book = function() { 
+
+		var isbn = '9781590599082';
+		var title = 'Pro JavaScript Design Patterns';
+		var author = ['Dustin Diaz', 'Ross Harmes'];
+};
+</code></pre>
+					</section>
+					
+					<section>
+						<h2>Private methods</h2>
+						<pre><code class="javascript" data-trim>
+var Book = function() { 
+	
+	var isbn = '9781590599082';
+
+	function checkIsbn(isbn) { 
+	    return isbn && isbn.match(/^[\d-]+$/);
+	}
+};
+</code></pre>
+					</section>
+					
+					<section>
+						<h2>Public priviledged methods</h2>
+						<pre><code class="javascript" data-trim style="font-size: 1em">
+var Book = function() { 
+	
+	var isbn = '9781590599082';
+	
+	function checkIsbn(isbn) { 
+	    return isbn && isbn.match(/^[\d-]+$/);
+	}
+	
+	this.setIsbn = function(newIsbn) {
+	    isbn = checkIsbn(newIsbn) ? newIsbn : 'No valid isbn specified';
+	}; 
+};
+</code></pre>
+					</section>
+					
+					<section>
+						<h2>Two types of public methods combined</h2>
+						<pre><code class="javascript" data-trim style="max-height: 600px; font-size: 1em;">
+var Book = function() { 
+
+	var isbn = '9781590599082';
+	var title = 'Pro JavaScript Design Patterns';
+	var author = ['Dustin Diaz', 'Ross Harmes'];
+
+	function checkIsbn(isbn) { 
+	    return isbn && isbn.match(/^[\d-]+$/);
+	}
+
+	this.setIsbn = function(newIsbn) {
+	    isbn = checkIsbn(newIsbn) ? newIsbn : 'No valid isbn specified';
+	}; 
+};
+
+Book.prototype.display = function() { }; 
+
+var jsPatterns = new Book();
+jsPatterns.setIsbn('9781590599082');
+jsPatterns.display();
+</code></pre>
+					</section>
+					
+					<section>
+						<h2>Private static members & class constructor</h2>
+						<pre><code class="javascript" data-trim>
+var Book = (function() {
+		
+		var instances = 0;
+		
+		// class constructor
+		return function() { 
+		    instances++;
+		}
+})();
+
+var book1 = new Book(); // Book -> instances == 1
+var book2 = new Book(); // Book -> instances == 2
+</code></pre>
+					</section>
+					
+					<section>
+						<h2>Private static methods</h2>
+						<pre><code class="javascript" data-trim style="max-height: 600px;">
+var Book = (function() {
+
+	// private static method
+	function checkIsbn(isbn) { 
+	    return isbn && isbn.match(/^[\d-]+$/);
+	}
+	
+	// class constructor
+	return function(isbn) { 
+	    checkIsbn(isbn)
+	}
+})();
+
+// public static method
+Book.convertToTitleCase = function(string) {}
+</code></pre>
+					</section>
+					
+					<section>
+						<h2 style="font-size: 1.2em">Static & instance members & methods combined</h2>
+						<pre><code class="javascript" data-trim style="max-height: 700px; font-size: 1em;">
+var Book = (function() {
+		
+	// private static method
+	function checkIsbn(isbn) { 
+	    return isbn && isbn.match(/^[\d-]+$/);
+	}
+	
+	return function(isbnCode) { 
+	
+	    // private member
+	    var isbn;
+	
+	    // private method
+	    var isbnToCountry = function() { }
+		
+	    // public priviledged method
+	    this.getCountry = function() { }
+		
+	    // constructor code
+	    isbn = checkIsbn(isbnCode) ? isbnCode : 'No valid isbn specified';
+
+	}
+})();
+
+// public static method
+Book.convertToTitleCase = function(string) {}
+
+// public non-priviledged instance method
+Book.prototype.display = function() { }; 
+</code></pre>
+					</section>
+					
+					<section>
+						<h2>Classical Inheritance</h2>
+						<pre><code class="javascript" data-trim>
+function Person(name) {
+	this.name = name;
+}
+
+Person.prototype.getName = function() {
+	return this.name;
+}
+</code></pre>
+
+						<pre class="fragment"><code class="javascript" data-trim style="font-size: 1.1em;">
+// Author extends Person
+function Author(name, books) {
+		Person.call(this, name); 
+		this.books = books; 
+}
+
+Author.prototype = Object.create(Person.prototype); 
+
+var author = new Author('Dustin Diaz', ['JavaScript Design Patterns']);
+
+// accessing a public instance method of the parent class, oh yeah!
+author.getName();
+</code></pre>
+					</section>
+					
+				</section>
+				
+				<section>
+					<section>
+						<h1>
+							<div>Imitating classes</div>
+							<div style="font-size: 0.8em;">(revisited)</div>
+						</h1>
+						<ul>
+							<li class="fragment" style="margin-bottom: 20px;">So what's wrong with this approach?</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/ZTnno5cp118?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
+				</section>
+				
+				<section data-transition="none">
+					<div style="position: absolute; width: 100%; min-height: 600px;">
+						
+						<div class="fragment">
+							<div class="arrow arrow4"></div>
+							<div class="box ideaBox ideaBox1">
+								<p>Modularization</p>
+								<p>Code Reuse</p>
+							</div>
+						</div>
+						
+						<div class="fragment">
+							<div class="arrow arrow5"></div>
+							<div class="box ideaBox ideaBox2">
+								<p>Encapsulation</p>
+								<p>Information Hiding</p>
+							</div>
+						</div>
+						
+						<div class="fragment">
+							<div class="arrow arrow6"></div>
+							<div class="box ideaBox ideaBox3">
+								<p>Abstraction</p>
+							</div>
+						</div>
+						
+						<div class="box classesBox">
+							<p>Classes</p>
+						</div>
+						
+						<div>
+							<div class="arrow arrow1"></div>
+							<div class="box toolBox toolBox1">
+								<p>Group of methods</p>
+							</div>
+						</div>
+						
+						<div>
+							<div class="arrow arrow2"></div>
+							<div class="box toolBox toolBox2">
+								<p>Private</p>
+							</div>
+						</div>
+						
+						<div>
+							<div class="arrow arrow3"></div>
+							<div class="box toolBox toolBox3">
+								<p>Implementation of abstract methods/interfaces</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				<section data-transition="none">
+					<div style="position: absolute; width: 100%; min-height: 600px;">
+						
+						<div>
+							<div class="arrow arrow4"></div>
+							<div class="box ideaBox ideaBox1">
+								<p>Modularization</p>
+								<p>Code Reuse</p>
+							</div>
+						</div>
+						
+						<div>
+							<div class="arrow arrow5"></div>
+							<div class="box ideaBox ideaBox2">
+								<p>Encapsulation</p>
+								<p>Information Hiding</p>
+							</div>
+						</div>
+						
+						<div>
+							<div class="arrow arrow6"></div>
+							<div class="box ideaBox ideaBox3">
+								<p>Abstraction</p>
+							</div>
+						</div>
+						
+						<div class="box classesBox image">
+							<img src="images/toolbox.png" alt='' />
+						</div>
+						
+						<div>
+							<div class="arrow arrow1"></div>
+							<div class="box toolBox toolBox1 image">
+								<img src="images/tools-clip-art-tools-clip-art-12.png" alt='' />
+							</div>
+						</div>
+						
+						<div>
+							<div class="arrow arrow2"></div>
+							<div class="box toolBox toolBox2 image">
+								<img src="images/tools-clip-art-tools-clip-art-12.png" alt='' />
+							</div>
+						</div>
+						
+						<div>
+							<div class="arrow arrow3"></div>
+							<div class="box toolBox toolBox3 image">
+								<img src="images/tools-clip-art-tools-clip-art-12.png" alt='' />
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				<section>
+					
+					<section>
+						<h1>Closures</h1>
+					</section>
+					
+					<section>
+						<p>Sending AJAX requests and receiving asynchronouse responses</p>
+						<pre><code class="javascript" data-trim style="max-height: 800px; width: 1100px;">
+var sendAjaxRequest = function (url, data) {
+    
+    var ajaxRequest = new XMLHttpRequest();
+    ajaxRequest.open(data.method, url);
+    ajaxRequest.setRequestHeader('Content-Type', data.contentType + '; charset=' + data.encoding);
+    
+    ajaxRequest.onreadystatechange = function() {
+        
+        if (ajaxRequest.readyState == 4) {
+            if (ajaxRequest.status == 200) {
+                data.onSuccess(ajaxRequest);
+            } else {
+                data.onFailure(ajaxRequest);
+            }
+        }
+        
+    };
+    
+    ajaxRequest.send(data.postBody);
+};
+</code></pre>
+					</section>
+					<section>
+						<p>Not necessarily implemented with an anonymous function</p>
+						<pre><code class="javascript" data-trim style="max-height: 800px; width: 1100px;">
+var sendAjaxRequest = function (url, data) {
+    
+    var ajaxRequest = new XMLHttpRequest();
+    ajaxRequest.open(data.method, url);
+    ajaxRequest.setRequestHeader('Content-Type', data.contentType + '; charset=' + data.encoding);
+    
+    var onStateChanged = function() {
+        
+        if (ajaxRequest.readyState == 4) {
+            if (ajaxRequest.status == 200) {
+                data.onSuccess(ajaxRequest);
+            } else {
+                data.onFailure(ajaxRequest);
+            }
+        }
+        
+    };
+	
+    ajaxRequest.onreadystatechange = onStateChanged;
+    
+    ajaxRequest.send(data.postBody);
+};
+</code></pre>
+					</section>
+					<section>
+						<pre><code class="javascript" data-trim>
+sendAjaxRequest('/VideoSurveillance/Communication', {
+        method: 'POST',
+        contentType: 'text/xml',
+        encoding: 'utf-8',
+        postBody: xml,
+        onSuccess: function() {},
+        onFailure: function() {}
+    });
+</code></pre>
+					</section>
+					
+					<section>
+						<p>A simpler example</p>
+						<pre><code class="javascript" data-trim style="width: 900px;">
+function makeSizer(size) {
+    return function() {
+        document.body.style.fontSize = size + 'px';
+    };
+}
+
+document.querySelector('#size-12').onclick = makeSizer(12);
+document.querySelector('#size-14').onclick = makeSizer(14);
+</code></pre>
+						<div class="fragment" style="margin-top: 30px;">
+							<p>In other words, the function defined in the closure 'remembers' the environment in which it was created.</p>
+							<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures">MDN</a></p>
+						</div>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h1>Self-invoking functions</h1>
+					</section>
+					
+					<section>
+						<p>Let's get back to the Cosmic Encounter Score Board project source code...</p>
+						<pre><code class="javascript" data-trim>
+var score = {};
+
+games.forEach(function(game) {
+    // some calculations
+});
+
+// some DOM operations
+</code></pre>
+					</section>
+					
+					<section>
+						<p>And encapsulate the globals...</p>
+						<pre><code class="javascript" data-trim>
+( function() {
+						
+	var score = {};
+
+	games.forEach(function(game) {
+	    // some calculations
+	});
+
+	// some DOM operations
+
+}() );
+</code></pre>
+					</section>
+				</section>
+				
+				<section>
+				
+					<section>
+						<h1>Object literals for pure data</h1>
+					</section>
+					
+					<section>
+						<pre><code class="javascript" data-trim style="width: 1000px;">
+var Settings = {
+	CommunicationChanel: '/VideoSurveillance/Communication', 
+	VideoChanel: '/VideoSurveillance/Video', 
+	ConfigurationAPIChanel: '/Config'
+}
+</code></pre>
+
+						<pre class="fragment"><code class="javascript" data-trim style="width: 1000px; font-size: 0.8em;">
+{
+	"title": "Uploads from everyone",
+	"link": "https://www.flickr.com/photos/",
+	"description": "",
+	"modified": "2014-10-10T15:18:06Z",
+	"generator": "https://www.flickr.com/",
+	"items": [
+	    {
+	        "title": "Tenis 29/09",
+	        "link": "https://www.flickr.com/photos/ciudaddeldeporte/15309535679/",
+	         "media": {"m":"https://farm3.staticflickr.com/2950/15309535679_fe2fc865ca_m.jpg"},
+	        "date_taken": "2014-09-29T15:29:25-08:00",
+	        "description": " X Olimpiada Escolar",
+	        "published": "2014-10-10T15:18:06Z",
+	        "author": "nobody@flickr.com (Viña Ciudad del Deporte)",
+	        "author_id": "50826553@N08",
+	        "tags": "tenis viñadelmar ciudaddeldeporte xolimpiadaescolar"
+	    },
+	    {
+	        "title": "Prescott-012.jpg",
+	        "link": "https://www.flickr.com/photos/9289918@N06/15309535849/",
+	        "media": {"m":"https://farm6.staticflickr.com/5597/15309535849_44683b3fc3_m.jpg"},
+	        "date_taken": "2014-08-01T10:45:18-08:00",
+	        "description": " jlglinnell posted a photo: ",
+	        "published": "2014-10-10T15:18:08Z",
+	        "author": "nobody@flickr.com (jlglinnell)",
+	        "author_id": "9289918@N06",
+	        "tags": "prescott vscc"
+	    }
+	]
+}
+</code></pre>
+					</section>
+				</section>
+				
+				<section>
+					
+					<section>
+						<h1>Creating objects using a <strong>constructor</strong></h1>
+					</section>
+					
+					<section>
+						<pre><code class="javascript" data-trim>
+						
+var Player = function(name) {
+
+    this.name = name;
+    this.ratio = 0;
+	
+    var gameCount = 0;
+    var points = 0;
+	
+    this.addGame = function(gameDescription) {
+        // update points and this.ratio;
+    }
+}
+						</code></pre>
+						<pre class="fragment"><code class="javascript" data-trim>
+var veso = new Player('veso');
+
+veso.addGame({
+        players: 5,
+		winners: 1,
+		isWinner: false
+    });
+	
+console.log(veso.ratio);
+						</code></pre>
+						<p class="fragment" style="font-size: 0.7em;">At the end of the day, there is <em>almost</em> no difference between an object created with a literal and an object created by a constructor function.</p>
+					</section>
+					
+					<section>
+						<p>The <strong>new</strong> keyword is a shortcut for changing the context (using call/apply/bind) to a fresh new object</p>
+						<pre><code class="javascript" data-trim>
+var veso = new Player('veso');
+						</code></pre>
+						<pre><code class="javascript" data-trim>
+var veso = {};
+Player.call(veso, 'veso');
+						</code></pre>
+					</section>
+				</section>
+				
+				<section>
+				
+					<section>
+						<h1>Adding methods in the <strong>ptototype</strong> chain</h1>
+					</section>
+					
+					<section>
+						<pre><code class="javascript" data-trim>
+						
+var Player = function(name) {
+    // constructor code
+}
+
+Player.prototype.display = function() {
+    // displays the player on the screen
+}
+						</code></pre>
+						<pre class="fragment"><code class="javascript" data-trim>
+var veso = new Player('veso');
+
+veso.addGame({
+        players: 5,
+		winners: 1,
+		isWinner: false
+    });
+	
+veso.display();
+						</code></pre>
+					</section>
+					
+					<section>
+						<pre><code class="javascript" data-trim>
+						
+// basic polyfill for Array.prototype.forEach
+if (!Array.prototype.forEach) {
+    Array.prototype.forEach = function(handler) {
+        for (var i = 0; i < this.length; i++) {
+            handler(this[i]);
+        }
+    };
+}
+						</code></pre>
+					</section>
+				</section>
+				
+				<section>
+					
+					<section>
+						<h1>Creating objects with a <strong>prototype</strong></h1>
+					</section>
+					
+					<section>
+						<p>Search in the Web Client also searches for views but uses the Folder visual representation to display them</p>
+						<pre class="fragment"><code class="javascript" data-trim>
+var folder = new FolderTemplate(data);
+// ...
+var view = Object.create(folder);
+						</code></pre>
+					</section>
+				</section>
+				
+				<section>
+					
+					<section>
+						<h1>"Advanced" singleton using an anonymous <strong>constructor</strong></h1>
+					</section>
+					
+					<section>
+						<p>Let's first see how a singleton is defined in JavaScript</p>
+						<pre class="fragment"><code class="javascript" data-trim style="width: 1000px;">
+var mySingletonObject = {};
+						</code></pre>
+						<div class="fragment" style="margin-top: 90px;">
+							<p>We've already seen some singletons during the presentation:</p>
+							<pre><code class="javascript" data-trim style="width: 1000px;">
+var Settings = {
+    CommunicationChanel: '/VideoSurveillance/Communication', 
+    VideoChanel: '/VideoSurveillance/Video', 
+    ConfigurationAPIChanel: '/Config'
+}
+	</code></pre>
+						</div>
+					</section>
+					
+					<section>
+						<p>"Advanced" singleton is such an object that embraces encapsulation and does not limit the code to an object literal</p>
+						<pre><code class="javascript" data-trim>
+var CameraSearchController = new function() {
+    var cameraResults = [];
+    this.pauseCameras = function() { /* ... */ };
+    this.resumeCameras = function() { /* ... */ };
+    // some local functions here
+}
+						</code></pre>
+						<pre class="fragment"><code class="javascript" data-trim>
+CameraSearchController.pauseCameras();
+						</code></pre>
+						<div class="fragment">
+							<p style="font-size: 0.8em; margin-top: 50px;">Compare this to first implementing the verboise singleton pattern and then using getInstance() method accross the application</p>
+							<pre><code class="java" data-trim>
+CameraSearchController.getInstance().pauseCameras();
+							</code></pre>
+						</div>
+					</section>
+				</section>
+				
+				<section>
+				
+					<section>
+						<h1>Augmenting the <strong>this</strong></h1>
+					</section>
+					
+					<section>
+						<pre><code class="javascript" data-trim>
+var CameraThumbnail = function (cameraData) {
+    this.start = function() { /* ... */ };
+    this.stop = function() { /* ... */ };
+}
+						</code></pre>
+						<pre class="fragment"><code class="javascript" data-trim>
+var Camera = function (cameraData) {
+
+    CameraThumbnail.call(this, cameraData);
+
+    this.onLive = function() { /* ... */ };
+    this.onPlayback = function() { /* ... */ };
+}
+						</code></pre>
+						<p class="fragment" style="text-align: left; font-size: 0.8em;">Conclusion: You don't need to know about the prototype chain to inherit :)</p>
+					</section>
+				</section>
+				
+				<section>
+				
+					<section>
+						<h1>Mixins</h1>
+						<h3>Takes the augmenting one step further</h3>
+					</section>
+					
+					<section>
+						<pre><code class="javascript" data-trim style="min-width: 1100px;">
+var moveMixin = {
+    moveUp: function() {
+        this.element.style.top = this.position.top - this.speed + 'px';
+    },
+    moveLeft: function() {
+        this.element.style.left = this.position.left - this.speed + 'px';
+    }
+}
+						</code></pre>
+						<pre class="fragment"><code class="javascript" data-trim style="min-width: 1100px;">
+var Player = function() { /* ... */ };
+var Enemy = function() { /* ... */ };
+
+augment(Player, moveMixin);
+						</code></pre>
+					</section>
+					
+					<section>
+						<pre><code class="javascript" data-trim style="min-width: 1100px;">
+function augment(dest, source) {
+    for (methodName in source.prototype) {
+        if (!dest.prototype[methodName]) {
+            dest.prototype[methodName] = source.prototype[methodName];
+        }
+    }
+}
+						</code></pre>
+					</section>
+				</section>
+				
+				<section>
+				
+					<section>
+						<h1>Objects as namespaces</h1>
+					</section>
+					
+					<section>
+						<pre><code class="javascript" data-trim>
+var milestone = milestone || {};
+
+milestone.connect = function() { /* ... */ };
+milestone.logIn = function(uname, password) { /* ... */ };
+milestone.disconnect = function() { /* ... */ };
+						</code></pre>
+						<pre class="fragment"><code class="javascript" data-trim>
+var milestone = milestone || {};
+
+milestone.Camera = function(id) { /* ... */ };
+milestone.Export = function(id) { /* ... */ };
+						</code></pre>
+						<pre class="fragment"><code class="javascript" data-trim>
+var camera = new milestone.Camera(hash);
+camera.start();
+						</code></pre>
+					</section>
+				</section>
+				
+				<section>
+				
+					<section>
+						<h1>Duck typing</h1>
+						<h3>instead of interface-based polymorphism</h3>
+						<q class="fragment" style="display: block; text-align: left;">"When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck."</q>
+					</section>
+					
+					<section data-transition="none">
+						<img src="images/polymorphism/0.png" alt='' />
+						<pre class="fragment"><code class="java" data-trim>
+public static void farm(Animal x) {
+    System.out.println(x.makeNoise());
+}
+						</code></pre>
+					</section>
+					
+					<section data-transition="none">
+						<img src="images/polymorphism/1.png" alt='' />
+						<pre><code class="java" data-trim>
+public static void farm(Animal x) {
+    System.out.println(x.makeNoise());
+}
+						</code></pre>
+					</section>
+					
+					<section data-transition="none">
+						<img src="images/polymorphism/2.png" alt='' />
+						<img style="position: absolute; right: -200px; top: 0px;" class="fragment" src="images/polymorphism/java.util.stack.png" alt='' />
+						<pre><code class="java" data-trim>
+public static void farm(Animal x) {
+    System.out.println(x.makeNoise());
+}
+						</code></pre>
+					</section>
+					
+					<section data-transition="none">
+						<img src="images/polymorphism/3.png" alt='' />
+						<pre><code class="java" data-trim>
+public static void farm(Animal x) {
+    System.out.println(x.makeNoise());
+}
+						</code></pre>
+					</section>
+					
+					<section data-transition="none">
+						<img src="images/polymorphism/3.png" alt='' />
+						<pre><code class="java" data-trim>
+public static void farm(LivingThing x) {
+    System.out.println(x.makeNoise());
+}
+						</code></pre>
+					</section>
+					
+					<section data-transition="none">
+						<img src="images/polymorphism/4.png" alt='' />
+						<pre><code class="java" data-trim>
+public static void farm(LivingThing x) {
+    System.out.println(x.makeNoise());
+}
+						</code></pre>
+					</section>
+					
+					<section data-transition="none">
+						<img src="images/polymorphism/5.png" alt='' style="margin-top: -100px;" />
+						<pre><code class="java" data-trim>
+public static void farm(Noisable x) {
+    System.out.println(x.makeNoise());
+}
+						</code></pre>
+					</section>
+					
+					<section>
+						<p>If you think the Noisable interface is a joke, please pay attention to the following built-in interfaces in Java:</p>
+						<ul>
+							<li>Cloneable</li>
+							<li>Comparable</li>
+							<li>Serializable</li>
+							<li>Runnable</li>
+						</ul>
+					</section>
+					
+					<section>
+						<p>Duck typing in action</p>
+						<pre><code class="javascript" data-trim>
+var farm = function(x) {
+    console.log(x.makeNoise());
+}
+						</code></pre>
+					</section>
+				</section>
+				
+				<section>
+				
+					<section>
+						<h1>Powerful reflection</h1>
+						<h3>instead of complicated dependency injection or reflection APIs</h3>
+					</section>
+					
+					<section>
+						<p>We used to have one type of <strong style="color: black; background: white;">side panel</strong> in the Web Client</p>
+						<pre><code class="javascript" data-trim>
+// somewhere in the GridEdit component
+var addCameraPanel = new SidePanel();
+						</code></pre>
+						<p class="fragment">But now they are two types - <strong style="color: black; background: white;">AddCameraPanel</strong> and <strong style="color: black; background: white;">InvestigationsPanel</strong></p>
+						<pre class="fragment"><code class="javascript" data-trim>
+// somewhere in the GridEdit component, 
+// where panelType is provided as a parameter
+var addCameraPanel = new window[panelType]();
+						</code></pre>
+					</section>
+					
+					<section>
+						<p>Compare this to the Java Reflection API</p>
+						<pre><code class="java" data-trim style="min-width: 1100px; min-height: 600px;">
+try {
+    Class myClass = Class.forName("MyClass");
+    Class[] types = {Double.TYPE};
+    Constructor constructor = myClass.getConstructor(types);
+    Object[] parameters = {new Double(0)};
+    Object instanceOfMyClass = constructor.newInstance(parameters);
+} catch (ClassNotFoundException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+} catch (InstantiationException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+} catch (IllegalAccessException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+} catch (IllegalArgumentException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+} catch (InvocationTargetException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+} catch (NoSuchMethodException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+} catch (SecurityException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+						</code></pre>
+					</section>
+					
+					<section>
+						<p>Or C# Reflection API</p>
+						<pre><code class="java" data-trim style="min-width: 1200px;">
+myObject = (MyAbstractClass)Activator.CreateInstance("AssemblyName", "TypeName");
+						</code></pre>
+					</section>
+				</section>
+				
+				<section>
+				
+					<section>
+						<h1 style="font-size: 3em;">Origin of class-based OOP</h1>
+						<ul style="font-size: 0.8em;">
+							<li class="fragment">
+								<p style="margin: 0; font-weight: bold; font-size: 1.1em">Aristotle  (384-322  BC)</p>
+								<ul>
+									<li class="fragment">essence = genus + differentia</li>
+									<li class="fragment">Single  correct  taxonomy  of  natural  things</li>
+									<li class="fragment">Aristotle finds about the "accidental"  properties</li>
+								</ul>
+							</li>
+							<li class="fragment" style="margin-top: 10px;">
+								<p style="margin: 0; font-weight: bold; font-size: 1.1em">Criticism - XIX and XX century by different philosophers</p>
+								<ul>
+									<li class="fragment">no universal rules to define a category</li>
+									<li class="fragment">not a mechanical  process  but  it  requires  creative  invention  and  evaluation</li>
+									<li class="fragment">some simple concepts are extremely difficult to define in terms of shared properties - ex: game, work of art </li>
+									<li class="fragment">no better members of a category</li>
+									<li class="fragment">categorization depends on the author's background,  mental  capabilities  and experience - ex: snow and ice, colors, etc.</li>
+									<li class="fragment">ad-hoc categories - what to get for a present, what to get from home in case of a fire, what to do in the weekend</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h3>Prototype-based categories</h3>
+						<h6>(as defined by the philosophers)</h6>
+						<ul style="font-size: 0.8em;">
+							<li class="fragment">graded, fuzzy boundaries, central member with a membership of 1 - ex: red</li>
+							<li class="fragment">clear boundaries, better members - ex: positive integers</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h1 style="font-size: 3em;">Classes vs. Prototypes</h1>
+					
+					<table class="table">
+						<tr>
+							<th style="width: 500px;"></th>
+							<th>Classes, Types, static languages</th>
+							<th>Prototypes, no types, dynamic languages</th>
+						</tr>
+						<tr class="fragment">
+							<td>better code documentation</td>
+							<td>x</td>
+							<td></td>
+						</tr>
+						<tr class="fragment">
+							<td>suitable for juniors</td>
+							<td>x</td>
+							<td></td>
+						</tr>
+						<tr class="fragment">
+							<td>suitable for education</td>
+							<td>x</td>
+							<td></td>
+						</tr>
+						<tr class="fragment">
+							<td>smaller and coherent code base</td>
+							<td></td>
+							<td>x</td>
+						</tr>
+						<tr class="fragment">
+							<td>boosts development productivity</td>
+							<td></td>
+							<td>x</td>
+						</tr>
+						<tr class="fragment em">
+							<td>better adapts to changing requirements</td>
+							<td></td>
+							<td>x</td>
+						</tr>
+					</table>
+				</section>
+				
+				<section>
+				
+					<section>
+						<h1>ES6 Classes</h1>
+						<h3>Syntax sugar over closures and prototypes</h3>
+					</section>
+					
+					<section style="width: 1200px; margin-left: -100px;">
+						<pre style="float: left; width: 550px; margin-right: 10px;"><code class="javascript" data-trim style="font-size: 0.8em;">
+class Vector3 {
+ 
+  constructor (x, y, z) {
+    this.x = x; this.y = y; this.z = z;
+  }
+ 
+  magnitude() {
+    var sqr = p => p * p;
+    return Math.sqrt(sqr(this.x) + sqr(this.y) + sqr(this.z));
+  }
+}
+						</code></pre>
+						<pre style="float: left; width: 550px;" class="fragment"><code class="javascript" data-trim style="font-size: 0.8em;">
+var Vector3 = (function () {
+ 
+  function Vector3 (x, y, z) {
+    this.x = x; this.y = y; this.z = z;
+  }
+ 
+  Vector3.prototype.magnitude = function() {
+    var sqr = function(p) { return p * p; };
+    return Math.sqrt(sqr(this.x) + sqr(this.y) + sqr(this.z));
+  }
+; return Vector3;})();
+						</code></pre>
+					</section>
+					
+					<section>
+						<img src="images/more.parts.png" alt='' />
+					</section>
+				</section>
+				
+				<section>
+					<h1>Congratulations!</h1>
+					<h3>You have now moved beyond global functions as your main tool for building JavaScript applications</h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -88,3 +88,5 @@ TODO: show the json from the previous lecture!
 ###*09, 21st Sept* - Basic layouts and CSS
 
 ###*10, 28th Sept* - Where are my classes?
+
+[http://neverlastinger.github.io/jssg/10_WhereAreMyClasses/](http://neverlastinger.github.io/jssg/10_WhereAreMyClasses/)

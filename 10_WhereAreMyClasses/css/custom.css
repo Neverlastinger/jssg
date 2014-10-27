@@ -1,0 +1,176 @@
+#custom code {
+	font-size: 1.4em;
+	line-height: 30px;
+}
+#custom pre {
+	margin: 0 0 20px 0;
+}
+#custom p {
+	margin-bottom: 30px;
+	text-align: left;
+}
+#custom .box p {
+	margin-bottom: 0px;
+	text-align: center;
+}
+#custom section img {
+	border: none;
+	background: none;
+	box-shadow: none;
+}
+#custom code.java {
+	background-color: white;
+}
+#custom code.java,
+#custom code.java * {
+	color: black !important;
+}
+#custom .table td {
+	border: 1px solid white;
+	font-size: 0.6em;
+	text-align: center;
+}
+#custom .table tr.em {
+	color: orange;
+	font-size: 1.2em;
+}
+#custom .table th {
+	padding: 10px;
+	border: 1px solid white;
+	font-size: 0.6em;
+	text-align: center;
+}
+#custom h1 {
+	-moz-hyphens: none !important;
+}
+
+#custom strong {
+	color: yellow; 
+	font-weight: bold;
+}
+
+#custom .diagramContainer {
+	position: absolute; 
+	width: 100%; 
+	min-height: 600px;
+}
+
+#custom .box {
+	position: absolute; 
+	z-index: 2;
+	border: 1px solid white;
+}
+
+#custom .ideaBox { 
+	top: 0px;
+	padding: 10px; 
+	background-color: hsl(209, 59%, 60%); 
+	border-radius: 20px; 
+}
+
+#custom .ideaBox1 {
+	left: 0px; 
+	min-height: 100px; 
+}
+#custom .ideaBox2 {
+	left: 300px; 
+	min-height: 100px; 
+}
+#custom .ideaBox3 {
+	left: 660px;
+	padding-top: 35px;
+	height: 80px;
+}
+
+#custom .classesBox {
+	top: 220px; left: 190px; 
+	text-align: center; 
+	padding-top: 22px; 
+	width: 560px; 
+	height: 120px; 
+	background-color: hsl(20, 100%, 50%); 
+	font-size: 78px; 
+	border: 1px solid white;
+}
+
+#custom .classesBox img {
+	position: relative;
+	top: -20px;
+	border: none;
+	background-color: transparent;
+	box-shadow: none;
+}
+
+#custom .toolBox {
+	bottom: 0px; padding: 10px; background-color: hsl(24, 100%, 17%);
+}
+
+#custom .toolBox1 {
+	left: 0px;
+	min-height: 85px;
+	padding-top: 45px;
+}
+#custom .toolBox2 {
+	left: 360px; 
+	min-height: 85px;
+	padding: 45px 30px 10px 30px; 
+}
+#custom .toolBox3 {
+	left: 600px; 
+	padding-top: 33px; 
+	height: 97px; 
+	font-size: 28px;
+}
+
+#custom .toolBox.image {
+	padding: 0px;
+	height: 130px;
+}
+#custom .toolBox.image img {
+	position: relative;
+	top: -12px;
+	width: 190px;
+	border: none;
+	background-color: transparent;
+	box-shadow: none;
+}
+
+#custom .toolBox3.image {
+	left: 726px;
+}
+
+#custom .arrow {
+	position: absolute;
+	z-index: 1;
+	width: 5px; 
+	height: 150px;
+	background-color: black;
+}
+#custom .arrow1 {
+	top: 340px; 
+	left: 220px; 
+	transform: rotate(45deg);
+}
+#custom .arrow2 {
+	top: 340px; 
+	left: 440px; 
+}
+#custom .arrow3 {
+	top: 340px; 
+	left: 710px; 
+	transform: rotate(-45deg);
+}
+#custom .arrow4 {
+	top: 100px;
+	left: 220px;
+	transform: rotate(-45deg);
+}
+#custom .arrow5 {
+	top: 100px;
+	left: 440px;
+}
+#custom .arrow6 {
+	top: 100px;
+	left: 710px;
+	transform: rotate(45deg);
+}
