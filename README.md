@@ -69,7 +69,7 @@ TODO: show the json from the previous lecture!
 * Flickr Demo
 * Cosmic Encounter Score Board project - Stage 2
 
-###*08, 09th Sept* - [The Secret Life of Objects](http://eloquentjavascript.net/06_object.html)
+###*08, 09th Oct* - [The Secret Life of Objects](http://eloquentjavascript.net/06_object.html)
 * Objects as data structures - a recap
 * Adding methods to an object
 * Using the this inside an object literal - *duck.speak()*
@@ -85,8 +85,12 @@ TODO: show the json from the previous lecture!
 * Inheriting from the prototype of the constructor function
 * Inheritance
 
-###*09, 21st Sept* - Basic layouts and CSS
+###*09, 21st Oct* - Basic layouts and CSS
 
-###*10, 28th Sept* - Where are my classes?
+###*10, 28th Oct* - Where are my classes?
 
 [http://neverlastinger.github.io/jssg/10_WhereAreMyClasses/](http://neverlastinger.github.io/jssg/10_WhereAreMyClasses/)
+
+###*11, 11th Nov* - [Bugs and Error Handling](http://eloquentjavascript.net/08_error.html) + Establishing the Battle City Project
+* "use strict" - global variables, global context
+* debugging with Chrome - Pause on exceptions and on caught exception. 
