@@ -2,6 +2,18 @@
 
 This is the public space to find all resources and projects we work on during the JavaScript Study Group in Milestone Systems. The official book is [Eloquent JavaScript](http://eloquentjavascript.net/index.html). We've also created the [Cosmic Encounter Score Board](http://neverlastinger.github.io/jssg/CosmicEncounterScoreBoard/). 
 
+* 01, 12th Aug* - History of JavaScript
+* 02, 19th Aug* - [Values, Types, and Operators](http://eloquentjavascript.net/01_values.html), [Program Structure](http://eloquentjavascript.net/02_program_structure.html)
+* 03, 26th Aug* - Introduction to Programming with Hristo
+* 04, 2nd Sept* - What's happening in index.html? [Data Structures: Objects and Arrays](http://eloquentjavascript.net/04_data.html)
+* 05, 9th Sept* - [Functions](http://eloquentjavascript.net/03_functions.html), [Higher-Order Functions](http://eloquentjavascript.net/05_higher_order.html).
+* 06, 16th Sept* - Workshop - The Cosmic Encounter score board project. 
+* 07, 1st Oct* - Basic DOM
+* 08, 09th Oct* - [The Secret Life of Objects](http://eloquentjavascript.net/06_object.html)
+* 09, 21st Oct* - Basic layouts and CSS
+* 10, 28th Oct* - Where are my classes?
+* 11, 11th Nov* - [Bugs and Error Handling](http://eloquentjavascript.net/08_error.html) + Establishing the Battle City Project
+
 ###*01, 12th Aug* - History of JavaScript
 
 [http://neverlastinger.github.io/jssg/01_HistoryOfJavaScript/slides.html#/](http://neverlastinger.github.io/jssg/01_HistoryOfJavaScript/slides.html#/)
