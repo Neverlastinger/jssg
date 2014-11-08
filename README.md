@@ -116,7 +116,7 @@ TODO: show the json from the previous lecture!
 * JavaScript, security and the sandbox
 * Browser wars, the proprietary standards, the modern era
 
-[The Document Object Model](http://eloquentjavascript.net/13_dom.html)
+####[The Document Object Model](http://eloquentjavascript.net/13_dom.html)
 * DOM as a tree - the text nodes are the leafs
 * NodeList, poor design
 * Links between nodes
