@@ -15,15 +15,17 @@ var stage = new function() {
 
 	var stuffs = {
 		's': 'brick',
-		'w': 'brick-w',
-		'd': 'brick-d',
-		'a': 'brick-a',
-		'x': 'brick-x', 
+		'w': 'brick top',
+		'd': 'brick right',
+		'a': 'brick left',
+		'x': 'brick bottom', 
 		'g': 'ice', 
-		't': 'ice-t',
-		'h': 'ice-h',
-		'b': 'ice-b',
-		'f': 'ice-f'
+		't': 'ice top',
+		'h': 'ice right',
+		'f': 'ice left',
+		'b': 'ice bottom',
+		'_': 'player',
+		'#': 'base'
 	};
 
 	this.set = function(symbol, x, y) {

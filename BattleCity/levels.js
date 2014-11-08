@@ -17,7 +17,7 @@ var levels = [
 		' x x sss x x ',
 		' s s s s s s ',
 		' s s w w s s ',
-		' s s     s s ',
-		'      #      '
+		' s s  x  s s ',
+		'    _d#a     '
 	]
 ];

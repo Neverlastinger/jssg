@@ -14,20 +14,29 @@
 #gameStage .brick {
 	background: hsl(24, 100%, 40%);
 }
-#gameStage .brick-w {
-	height: 25px;
-	background: hsl(24, 100%, 40%);
-}
-#gameStage .brick-x {
-	margin-top: 25px;
-	height: 25px;
-	background: hsl(24, 100%, 40%);
-}
 
 #gameStage .ice {
 	background: hsl(163, 100%, 68%);
 }
-#gameStage .ice-t {
-	background: hsl(163, 100%, 68%);
+
+#gameStage .top {
 	height: 25px;
+}
+#gameStage .right {
+	margin-left: 25px;
+	width: 25px;
+}
+#gameStage .bottom {
+	margin-top: 25px;
+	height: 25px;
+}
+#gameStage .left {
+	width: 25px;
+}
+
+#gameStage .player {
+	background: green;
+}
+#gameStage .base {
+	background-color: hsl(0, 12%, 12%)
 }
