@@ -13,6 +13,7 @@ This is the public space to find all resources and projects we work on during th
 * 09, 21st Oct - Basic layouts and CSS
 * 10, 28th Oct - Where are my classes?
 * 11, 11th Nov - [Bugs and Error Handling](http://eloquentjavascript.net/08_error.html) + Establishing the Battle City Project
+* 12, 18th Nov - [JavaScript and the Browser](http://eloquentjavascript.net/12_browser.html)
 
 ###*01, 12th Aug* - History of JavaScript
 
@@ -106,3 +107,9 @@ TODO: show the json from the previous lecture!
 ###*11, 11th Nov* - [Bugs and Error Handling](http://eloquentjavascript.net/08_error.html) + Establishing the Battle City Project
 * "use strict" - global variables, global context
 * debugging with Chrome - Pause on exceptions and on caught exception. 
+
+###*12, 18th Nov* - [JavaScript and the Browser](http://eloquentjavascript.net/12_browser.html)
+* HTML and rendering HTML - error tolerance
+* JavaScript within the HTML
+* JavaScript, security and the sandbox
+* Browser wars, the proprietary standards, the modern era
