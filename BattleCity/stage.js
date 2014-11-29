@@ -2,48 +2,56 @@ var stage = new function() {
 	
 	var stuffs = {
 			's': {
-				className: 'brick'
+				className: 'Brick'
 			},
 			'w': {
-				className: 'brick',
+				className: 'Brick',
+				parts: [[1, 1], [0, 0]],
 				augment: top
 			},
 			'd': {
-				className: 'brick',
+				className: 'Brick',
+				parts: [[0, 1], [0, 1]],
 				augment: right
 			},
 			'a': {
-				className: 'brick',
+				className: 'Brick',
+				parts: [[1, 0], [1, 0]],
 				augment: left
 			},
 			'x': {
-				className: 'brick',
+				className: 'Brick',
+				parts: [[0, 0], [1, 1]],
 				augment: bottom
 			},
 			'g': {
-				className: 'ice'
+				className: 'Concrete'
 			},
 			't': {
-				className: 'ice',
+				className: 'Concrete',
+				parts: [[1, 1], [0, 0]],
 				augment: top
 			},
 			'h': {
-				className: 'ice',
+				className: 'Concrete',
+				parts: [[0, 1], [0, 1]],
 				augment: right
 			},
 			'f': {
-				className: 'ice',
+				className: 'Concrete',
+				parts: [[1, 0], [1, 0]],
 				augment: left
 			},
 			'b': {
-				className: 'ice',
+				className: 'Concrete',
+				parts: [[0, 0], [1, 1]],
 				augment: bottom
 			},
 			'_': {
-				className: 'player'
+				className: 'Player'
 			},
 			'#': {
-				className: 'base'
+				className: 'Base'
 			}
 		};
 	
@@ -78,10 +86,12 @@ var stage = new function() {
 			return;
 		}
 		
+		matrix.set(stuff, x, y);
+		
 		var div = document.createElement('div');
 		container.appendChild(div);
 		
-		div.setAttribute('class', stuff.className);
+		div.setAttribute('class', stuff.className.toLowerCase());
 		div.style.top = x * stuffSize + 'px';
 		div.style.left = y * stuffSize + 'px';
 		div.style.width = stuffSize + 'px';

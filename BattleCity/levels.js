@@ -1,5 +1,5 @@
 // bricks - w, d, x, a, s
-// ice - t, h, b, f, g
+// concrete - t, h, b, f, g
 // water - j
 // grass - k
 // ice* - l

@@ -31,8 +31,24 @@ var player = new function() {
 	
 	this.draw = function() {
 		
-		position.left += direction.left * speed;
-		position.top += direction.top * speed;
+		if (direction.left) {
+			
+			var y = matrix.getYPosition();
+			
+			position.left += direction.left * speed;
+			position.top = 50 * y;
+		}
+		
+		if (direction.top) {
+			
+			var x = matrix.getXPosition();
+			
+			position.left = 50 * x;
+			position.top += direction.top * speed;
+		}
+		
+		matrix.updatePlayerPosition(position.left, position.top);
+
 		
 		playerElement.style.left = position.left + 'px';
 		playerElement.style.top = position.top + 'px';
