@@ -1,64 +1,56 @@
+/**
+ * The rendering engine.
+ */
 var stage = new function() {
 	
-	var stuffs = {
-			's': {
-				className: 'Brick'
-			},
-			'w': {
-				className: 'Brick',
-				parts: [[1, 1], [0, 0]],
-				augment: top
-			},
-			'd': {
-				className: 'Brick',
-				parts: [[0, 1], [0, 1]],
-				augment: right
-			},
-			'a': {
-				className: 'Brick',
-				parts: [[1, 0], [1, 0]],
-				augment: left
-			},
-			'x': {
-				className: 'Brick',
-				parts: [[0, 0], [1, 1]],
-				augment: bottom
-			},
-			'g': {
-				className: 'Concrete'
-			},
-			't': {
-				className: 'Concrete',
-				parts: [[1, 1], [0, 0]],
-				augment: top
-			},
-			'h': {
-				className: 'Concrete',
-				parts: [[0, 1], [0, 1]],
-				augment: right
-			},
-			'f': {
-				className: 'Concrete',
-				parts: [[1, 0], [1, 0]],
-				augment: left
-			},
-			'b': {
-				className: 'Concrete',
-				parts: [[0, 0], [1, 1]],
-				augment: bottom
-			},
-			'_': {
-				className: 'Player'
-			},
-			'#': {
-				className: 'Base'
+	var playerElement;
+	var stuffsPerLine;
+	var container;
+	var stuffSize;
+	
+	this.init = function() {
+		
+		stuffsPerLine = levels[0][0].length;
+		
+		container = document.querySelector('#gameStage');
+		stuffSize = container.offsetWidth / stuffsPerLine;
+	};
+	
+	this.initStuff = function(stuff, x, y) {
+		
+		var div = document.createElement('div');
+		container.appendChild(div);
+		
+		div.setAttribute('class', stuff.className.toLowerCase());
+		div.style.left = x * stuffSize + 'px';
+		div.style.top = y * stuffSize + 'px';
+		div.style.width = stuffSize + 'px';
+		div.style.height = stuffSize + 'px';
+		
+		if (stuff.className == 'Player') {
+			playerElement = div;
+		}
+		
+		if (stuff.parts) {
+			if (stuff.parts[1][0] == 0 && stuff.parts[1][1] == 0) {
+				top(div);
 			}
-		};
+			if (stuff.parts[0][0] == 0 && stuff.parts[1][0] == 0) {
+				right(div);
+			}
+			if (stuff.parts[0][0] == 0 && stuff.parts[0][1] == 0) {
+				bottom(div);
+			}
+			if (stuff.parts[0][1] == 0 && stuff.parts[1][1] == 0) {
+				left(div);
+			}
+		}
+	};
 	
-	var stuffsPerLine = levels[0][0].length;
-	
-	var container = document.querySelector('#gameStage');
-	var stuffSize = container.offsetWidth / stuffsPerLine;
+	this.drawPlayer = function(x, y) {
+		playerElement.style.left = x * 50 + 'px';
+		playerElement.style.top = y * 50 + 'px';
+	};
 	
 	function top (element) {
 		element.style.height = stuffSize / 2 + 'px';
@@ -77,26 +69,5 @@ var stage = new function() {
 		element.style.width = stuffSize / 2 + 'px';
 		element.style.marginLeft = stuffSize / 2 + 'px';
 	};
-
-	this.set = function(symbol, x, y) {
 	
-		var stuff = stuffs[symbol];
-		
-		if (!stuff) {
-			return;
-		}
-		
-		matrix.set(stuff, x, y);
-		
-		var div = document.createElement('div');
-		container.appendChild(div);
-		
-		div.setAttribute('class', stuff.className.toLowerCase());
-		div.style.top = x * stuffSize + 'px';
-		div.style.left = y * stuffSize + 'px';
-		div.style.width = stuffSize + 'px';
-		div.style.height = stuffSize + 'px';
-		
-		stuff.augment && stuff.augment(div);
-	};
 };

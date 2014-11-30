@@ -1,21 +1,24 @@
-function setLevel() {
-	
-	var level = levels[0];
-	
-	level.forEach(function(line, lineCount) {
-		line.split('').forEach(function(symbol, symbolCount) {
-			stage.set(symbol, lineCount, symbolCount);
-		});
-	});
-	
-}
-
-setLevel();
-
-window.onload = gameloop;
+window.onload = function() {
+	stage.init();
+	levelParser.generate();
+	gameloop();
+};
 
 function gameloop() {
 	
 	player.draw();
 	requestAnimationFrame(gameloop);
 };
+
+function _log(text, id) {
+	
+	var element = document.querySelector('#info #' + id);
+	
+	if (!element) {
+		var element = document.createElement('p');
+		element.id = id;
+		document.querySelector('#info').appendChild(element);
+	}
+	
+	element.innerHTML = text;
+}

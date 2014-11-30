@@ -1,18 +1,16 @@
 var player = new function() {
 	
-	var playerElement = document.querySelector('.player');
-	
 	var direction = {
 			left: 0,
 			top: 0
 		};
 	
 	var position = {
-			left: playerElement.offsetLeft,
-			top: playerElement.offsetTop
+			left: 0,
+			top: 0
 		};
 	
-	var speed = 2;
+	var speed = 0.03; // squares per frame
 	
 	var move = function(left, top) {
 		direction = {
@@ -29,29 +27,41 @@ var player = new function() {
 			onStop: move.bind(null, 0, 0)
 		});
 	
+	this.setPosition = function(x, y) {
+		position = {
+				x: x,
+				y: y
+			};
+	};
+	
 	this.draw = function() {
+		
+		var newPosition = {
+				x: position.x,
+				y: position.y
+			};
 		
 		if (direction.left) {
 			
-			var y = matrix.getYPosition();
-			
-			position.left += direction.left * speed;
-			position.top = 50 * y;
+			newPosition.x += direction.left * speed; 
+			newPosition.y = Math.round(position.y * 2) / 2;
 		}
 		
 		if (direction.top) {
 			
-			var x = matrix.getXPosition();
-			
-			position.left = 50 * x;
-			position.top += direction.top * speed;
+			newPosition.x = Math.round(position.x * 2) / 2;
+			newPosition.y += direction.top * speed; 
 		}
 		
-		matrix.updatePlayerPosition(position.left, position.top);
-
+		if (!matrix.canMove(newPosition, direction)) {
+			return;
+		}
 		
-		playerElement.style.left = position.left + 'px';
-		playerElement.style.top = position.top + 'px';
+		position = newPosition;
+		
+		_log('player position: ' + position.x + ' : ' + position.y, 'playerPos');
+		
+		stage.drawPlayer(position.x, position.y);
 	};
 	
 };
