@@ -14,8 +14,11 @@ This is the public space to find all resources and projects we work on during th
 * 10, 28th Oct - Where are my classes?
 * 11, 11th Nov - [Bugs and Error Handling](http://eloquentjavascript.net/08_error.html) + Establishing the Battle City Project
 * 12, 18th Nov - [JavaScript and the Browser](http://eloquentjavascript.net/12_browser.html), [The Document Object Model](http://eloquentjavascript.net/13_dom.html)
-* 13, 25th Nov - Scale the Battle City viewport to different sizes
-* 14, 2nd Dec* - [Handling Events](http://eloquentjavascript.net/14_event.html) + Moving the Battle City player
+* 13, 13th Jan - Scale the Battle City viewport to different sizes
+* 14, 22nd Jan - [Handling Events](http://eloquentjavascript.net/14_event.html) + Moving the Battle City player
+* 15, 29th Jan - Drawing on Canvas with BKM
+
+
 
 ###*01, 12th Aug* - History of JavaScript
 
@@ -128,9 +131,12 @@ TODO: show the json from the previous lecture!
 * offsetWidth, offsetHeight
 * Changing styles
 
-###*13, 25th Nov* - Scale the Battle City viewport to different sizes
+###*13, 13th Jan* - Scale the Battle City viewport to different sizes
 
-###*14, 2nd Dec* - [Handling Events](http://eloquentjavascript.net/14_event.html) + Moving the Battle City player
+###*14, 22nd Jan* - [Handling Events](http://eloquentjavascript.net/14_event.html) + Moving the Battle City player
 * registering events
 * the event object
 * propagation - stopping, preventing default, bubbling and capturing
+* Hristo presents his solution
+
+###*15, 29th Jan* - Drawing on Canvas with BKM
